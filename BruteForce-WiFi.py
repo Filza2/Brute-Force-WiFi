@@ -1,5 +1,5 @@
 try:import os,re,subprocess,colorama,urllib.request;from time import sleep;from colorama import Fore
-except ModuleNotFoundError:exit('[!] Download The Missing Module !')
+except Exception as e:print(f'[!] Download The Missing Module ! , {e}');exit()
 class cr:gr=Fore.GREEN;rd=Fore.LIGHTRED_EX;bl=Fore.LIGHTBLUE_EX;rs=Fore.RESET 
 def banner():
     print(f'''
